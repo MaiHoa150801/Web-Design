@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Admin page</title>
+    <meta charset="UTF-8">
+    <!-- Link awesome and jquery -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <!-- link bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- LINK TỰ ADD -->
+    <link href="css/style.css" rel="stylesheet">
+    <script src="./js/main.js"></script>
+</head>
+
+<body>
+    <label class="nameFile">AdminPage.html</label>
+    <!-- PHẦN MENU -->
+    <!-- PHẦN MENU -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark  fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="./img/LOGOTRAVELL.png" height="40px" width="40px" /> Travel
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+        <div class="collapse navbar-collapse " id="menuContent">
+
+            <ul class="navbar-nav ml-lg-auto ml-md-5 ml-sm-5 ml-5">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="HomePage.html"><i class="fas fa-home"></i></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="navlink" data-toggle="dropdown">
+                    Danh muc
+                </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Book tour Vietnam</a>
+
+                        <a class="dropdown-item" href="#">Book tour the gioi</a>
+
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="order.html">Cart</a>
+                </li>
+                <li class="nav-item" id="adminpage">
+                    <a class="nav-link" href="./AdminPage.html">Admin page</a>
+                </li>
+                <li class="nav-item" id="login">
+                    <a class="nav-link" href="./login.html">Login</a>
+                </li>
+                <li class="nav-item" id="signup">
+                    <a class="nav-link" href="./sign_up.html">Sign Up</a>
+                </li>
+
+                <!-- <li>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2 mr-2 col-7 col-md-7" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-warning my-2 my-sm-0 col-4 col-md-3" type="submit"><b>Search</b></button>
+                </form>
+            </li> -->
+                <li id="logout"></li>
+            </ul>
+            <!--  -->
+        </div>
+    </nav>
+    <script>
+        checkLogin();
+        saveIndexPage();
+    </script>
+    <br><br><br>
+    <div class="row">
+        <div class="col-3" id="table_admin">
+
+            <ul>
+                <li>
+                    <h1>Control</h1>
+                </li>
+                <li onclick="admin_display_tours_table()">Quản lý Tours</li>
+                <li onclick="admin_display_accounts_table()">Quản lý Accounts</li>
+                <li onclick="admin_display_order_table()">Quản lý order</li>
+            </ul>
+        </div>
+
+        <div class="col-9">
+            <!-- SHOW TOUR -->
+            <div id="table_admin_tours">
+                <div class="product">
+                    <div class="title">
+                        <h4>Quản lý Tours</h4>
+                    </div>
+                    <hr>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#bookTourModal">
+                    <i class="fas fa-plus mr-2"></i>Add Tour</button>
+                    <table class="table">
+                        <thead class="thead-light text-center">
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Remark</th>
+                                <th>Img</th>
+                                <th>Location</th>
+                                <th>Time</th>
+                                <th>People</th>
+                                <th>group</th>
+                                <th>Price</th>
+                                <th>Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody class="text-center" id="listTours"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- FORM THÊM TOUR  -->
+            <div class="modal fade" id="bookTourModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLable" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Thêm sản phẩm</h5>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" class="form-row">
+                                <div class="col-12 mt-3">
+                                    <input class="form-control" type="text" id="nameTour" placeholder="name">
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <input class="form-control" type="text" id="remark" placeholder="remark">
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <input class="form-control" type="file" id="img" placeholder="img">
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <input class="form-control" type="text" id="location" placeholder="location">
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <input class="form-control" type="text" id="time" placeholder="time">
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <input class="form-control" type="text" id="people" placeholder="people">
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <input class="form-control" type="text" id="infor" placeholder="infor">
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <input class="form-control" type="number" id="price" placeholder="price">
+                                </div>
+                                <select class="col-12 mt-3 form-control" name="group" id="groupTour" aria-placeholder="group">
+                                    <option value="vietnam">Việt Nam</option>
+                                    <option value="china">Trung Quốc</option>
+                                    <option value="dubai">Dubai</option>
+                                    <option value="vietnam"></option>
+                                </select>
+                                <!-- <div class="col-12 mt-3">
+                                    <input class="form-control" type="text" id="groupTour" placeholder="group">
+                                </div> -->
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-outline-success" href="" onclick="addTour()">Add</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Exit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORM UPDATE TOUR  -->
+            <div class="modal fade" id="updateTour" tabindex="-1" role="dialog" aria-labelledby="exampleModalLable" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleupdateTour">Chỉnh sửa sản phẩm</h5>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" class="form-row">
+                                <div class="col-12 mt-3">
+                                    <input class="form-control" type="text" id="idd">
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <input class="form-control" type="text" id="named" placeholder="name">
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <input class="form-control" type="text" id="remarkd" placeholder="remark">
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <input class="form-control" type="file" id="imgd" placeholder="img">
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <input class="form-control" type="text" id="locationd" placeholder="location">
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <input class="form-control" type="text" id="timed" placeholder="time">
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <input class="form-control" type="text" id="peopled" placeholder="people">
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <input class="form-control" type="text" id="inford" placeholder="infor">
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <input class="form-control" type="number" id="priced" placeholder="price">
+                                </div>
+                                <select class="col-12 mt-3 form-control" name="group" id="groupTourd" aria-placeholder="group">
+                                    <option value="vietnam">Việt Nam</option>
+                                    <option value="china">Trung Quốc</option>
+                                    <option value="dubai">Dubai</option>
+                                    <option value="vietnam"></option>
+                                </select>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-outline-success" href="" onclick="submitTour()">Change</button>
+                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Exit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <script>
+                    showTours();
+                </script>
+            </div>
+            <!-- SHOW ACCOUNT -->
+            <div id="table_admin_users">
+                <div class="">
+                    <div class="title">
+                        <h4>Quản lý người sử dụng</h4>
+                    </div>
+                    <hr>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#addUser">
+                    <i class="fas fa-plus mr-2"></i>Add Account</button>
+                    <table class="table">
+                        <thead class="thead-light text-center">
+                            <tr>
+                                <th>ID</th>
+                                <th>FirstName</th>
+                                <th>LastName</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Address</th>
+                                <th>Role</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center" id="listUsers"></tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- FORM THÊM USER -->
+            <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLable" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-body">
+                                <form class="form-row" name="frm">
+                                    <div class="modal-title" id="addUser">
+                                        <h3>Add User </h3>
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <input class="form-control" type="text" id="firstname" placeholder="Enter FirstName" />
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <input class="form-control" type="text" id="lastname" placeholder="Enter LastName" />
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <input class="form-control" type="text" id="username" placeholder="Enter UserName" />
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <input class="form-control" type="password" id="password" placeholder="Enter Password" />
+                                    </div>
+
+                                    <div class="col-12 mt-3">
+                                        <input class="form-control" type="text" id="phone" placeholder="phone" />
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <input class="form-control" type="email" id="email" placeholder="Enter email" />
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <input class="form-control" type="text" id="address" placeholder="Enter Address" />
+                                    </div>
+                                </form>
+                                <button type="button" class="btn btn-success mt-3" onclick="addUser()">
+                                Add
+                            </button>
+                                <button type="button" class="btn btn-secondary mt-3" data-dismiss="modal">
+                                Exit
+                            </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FORM UPDATE USER -->
+            <div class="modal fade" id="updateUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLable" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-body">
+                                <form class="form-row">
+                                    <div class="modal-title" id="updateUser">
+                                        <h3>Update User</h3>
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <label>ID</label>
+                                        <input class="form-control" type="text" id="idu" placeholder="id" />
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <label>FirstName</label>
+                                        <input class="form-control" type="text" id="fnameu" placeholder="firstname" />
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <label>LastName</label>
+                                        <input class="form-control" type="text" id="lnameu" placeholder="lastname" />
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <label>Phone number</label>
+                                        <input class="form-control" type="number" id="phoneu" placeholder="Phone Number" />
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <label>Email</label>
+                                        <input class="form-control" type="email" id="emailu" placeholder="Email" />
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <label>Address</label>
+                                        <input class="form-control" type="text" id="addressu" placeholder="Address" />
+                                    </div>
+                                    <div class="form-group col-12 mt-3">
+                                        <label for="#role"> role </label>
+                                        <input type="text" name="" id="roleu" class="form-control" placeholder="role">
+                                    </div>
+                                </form>
+                                <div class="modal-footer">
+                                    <button class="btn btn-outline-success" href="" onclick="submitUser()">Change</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Exit</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                showUsers();
+            </script>
+
+            <div id="table_admin_order">
+                <div class="product">
+                    <div class="title">
+                        <h4>Quản lý Order</h4>
+                    </div>
+                    <hr>
+
+                    <table class="table">
+                        <thead class="thead-light text-center">
+                            <tr>
+                                <th>ID</th>
+                                <th>email</th>
+                                <th>phone</th>
+                                <th>name tour</th>
+                                <th>price</th>
+                                <th>amout</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center" id="listOrder"></tbody>
+                    </table>
+                </div>
+            </div>
+            <script>
+                showCartAdmin();
+            </script>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+.banner .booking {
+    height: 200px;
+    width: 80%;
+    position: absolute;
+    top: 280px;
+    left: 10%;
+    background-color: white;
+    box-shadow: 0 5px 15px 0 #ccc;
+}

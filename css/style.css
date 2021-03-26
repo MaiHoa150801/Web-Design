@@ -1,0 +1,761 @@
+        #adminpage {
+            display: none;
+        }
+        
+        .nav-link {
+            font-weight: bold;
+        }
+        
+        .nav-link:hover {
+            color: #ffc600 !important;
+        }
+        
+        .dropdown:hover>.dropdown-menu,
+        .dropdown-item {
+            display: block;
+        }
+        
+        .dropdown-menu:hover .dropdown {
+            display: block;
+        }
+        
+        .dropdown-menu {
+            box-shadow: 3px 3px 10px #fff !important;
+            color: #ffc600 !important;
+            border-top: 2px solid #ffc600;
+        }
+        
+        @media all and (max-width: 992px) {
+            .dropdown-menu {
+                color: #ffc600 !important;
+                border-top: 2px solid #ffc600;
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+            .dropdown-item {
+                color: white;
+            }
+            .navbar-nav {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 100%;
+                flex: 0 0 90%;
+                max-width: 100%
+            }
+        }
+        
+        .dropdown-item:hover {
+            transition: 0.5s;
+            cursor: pointer;
+            background-color: #ffc600;
+        }
+        
+        .dropdown-item.active,
+        .dropdown-item:active {
+            color: #fff;
+            text-decoration: none;
+            background-color: #007bff
+        }
+        /* HẾT PHẦN MENU */
+        
+        .text {
+            text-align: justify;
+            font-size: 20px;
+        }
+        /* tour */
+        
+        .collapse.show {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex !important;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px
+        }
+        /* chỉnh thẻ card hình ảnh */
+        
+        .card {
+            transform: scale(1);
+            transition: 2s;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        
+        .card:hover {
+            transform: scale(1.1);
+            box-shadow: 2px 2px 10px black;
+            text-shadow: 3px 3px 7px grey;
+            transition: 0.5s;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        /* chỉnh phần đảm bảo */
+        
+        #db1>i,
+        #db2>i,
+        #db3>i {
+            transform: scale(1);
+            transition: 1s;
+        }
+        
+        #db1,
+        #db2,
+        #db3 {
+            transform: scale(1);
+            transition: 1s;
+        }
+        
+        #db1:hover>i {
+            color: red;
+            transform: scale(1.1);
+            text-shadow: 3px 3px 7px grey;
+            transition: 0.5s;
+        }
+        
+        #db2:hover>i {
+            color: goldenrod;
+            transform: scale(1.1);
+            text-shadow: 3px 3px 7px grey;
+            transition: 0.5s;
+        }
+        
+        #db3:hover>i {
+            color: green;
+            transform: scale(1.1);
+            text-shadow: 3px 3px 7px grey;
+            transition: 0.5s;
+        }
+        
+        #db1:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+        }
+        
+        #db2:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+        }
+        
+        #db3:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+        }
+        /* Phần liên hệ cuối cùng */
+        
+        .container .button {
+            display: inline-block;
+            height: 60px;
+            width: 60px;
+            margin: 0 5px;
+            background: #fff;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease-out;
+        }
+        
+        .container .button .icon {
+            display: inline-block;
+            text-align: center;
+            height: 60px;
+            width: 60px;
+            border-radius: 50px;
+            box-sizing: border-box;
+            line-height: 60px;
+            transition: all 0.5s ease-out;
+        }
+        
+        .container .button .icon i {
+            font-size: 25px;
+            line-height: 60px;
+            transition: all 0.5s ease-out;
+        }
+        
+        .container .button span {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 60px;
+            margin-left: 10px;
+            transition: all 0.5s ease-out;
+        }
+        
+        .container .button:hover {
+            width: 200px;
+        }
+        
+        .container .button {
+            overflow: hidden;
+        }
+        /* Màu cho các icon liên hệ */
+        
+        .container .button:nth-child(1):hover .icon {
+            background: #4267B2;
+        }
+        
+        .container .button:nth-child(2):hover .icon {
+            background: #e4405f;
+        }
+        
+        .container .button:nth-child(3):hover .icon {
+            background: #0077B5;
+        }
+        
+        .container .button:nth-child(4):hover .icon {
+            background: #55acee;
+        }
+        
+        .container .button:nth-child(5):hover .icon {
+            background: #cd201f;
+        }
+        
+        .container .button:hover .icon i {
+            color: #fff;
+        }
+        
+        .container .button:nth-child(1) span {
+            color: #4267B2;
+        }
+        
+        .container .button:nth-child(2) span {
+            color: #e4405f;
+        }
+        
+        .container .button:nth-child(3) span {
+            color: #0077B5;
+        }
+        
+        .container .button:nth-child(4) span {
+            color: #55acee;
+        }
+        
+        .container .button:nth-child(5) span {
+            color: #cd201f;
+        }
+        /* Nền phía cuối */
+        
+        .background_footer {
+            background-color: gray;
+            width: 100%;
+        }
+        
+        .container-fluid {
+            background-color: gray;
+            padding: 50px;
+            background: url(./home-img.jpg);
+        }
+        /* PHẦN destination*/
+        
+        #item1,
+        #item1_1,
+        #item1_2 {
+            background-image: url(https://cdn.wallpapersafari.com/55/75/z7jpG6.jpg);
+        }
+        
+        #item2,
+        #item2_1,
+        #item2_2 {
+            background-image: url(https://wallpaperaccess.com/full/33929.jpg);
+        }
+        
+        #item3,
+        #item3_1,
+        #item3_2 {
+            background-image: url(https://cdn.hipwallpaper.com/i/99/96/Iyfq5x.jpg);
+        }
+        
+        #item4,
+        #item4_1,
+        #item4_2 {
+            background-image: url(https://wallpaperaccess.com/full/346434.jpg);
+        }
+        
+        #item5,
+        #item5_1,
+        #item5_2 {
+            background-image: url(https://wonderfulengineering.com/wp-content/uploads/2016/01/thailand-wallpaper-2.jpg);
+        }
+        
+        #item6,
+        #item6_1,
+        #item6_2 {
+            background-image: url(https://i.pinimg.com/originals/74/59/ae/7459ae5ed546b54858d38245db90fa2a.jpg);
+        }
+        /* #item7 {
+            background-image: url(./vietnam-flag.webp);
+        } */
+        
+        .destination {
+            margin-top: 0px;
+        }
+        
+        .destination {
+            position: relative;
+        }
+        
+        .destination h2 {
+            font-size: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #ddd;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: right;
+            z-index: 1;
+        }
+        
+        .destination {
+            font-size: 25px;
+            text-transform: capitalize;
+            margin-top: 40px;
+            text-align: right;
+            z-index: 2;
+        }
+        
+        .destination {
+            font-weight: bold;
+        }
+        
+        .destination .slice {
+            width: 100px;
+            border-top: 5px solid #3fced3;
+            position: absolute;
+            top: 80px;
+            right: 15px;
+        }
+        
+        .destination .detail {
+            width: 25%;
+            position: absolute;
+            top: 105px;
+            right: 0;
+            font-size: 12px;
+            color: #aaa;
+            height: 60px;
+            line-height: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-clamp: 3;
+            margin-left: 15px;
+            margin-right: 10px;
+            text-align: right;
+        }
+        
+        .destination .fake {
+            margin-top: 20px;
+            height: 60px;
+            color: transparent;
+        }
+        
+        .destination .image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .destination .image .itemBox {
+            height: 400px;
+            width: 100%;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            margin-top: 25px;
+            z-index: 0;
+        }
+        
+        .destination .image .itemSmallBox {
+            height: 187px;
+            width: 100%;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            margin-top: 25px;
+            z-index: 0;
+        }
+        
+        .destination .image .item {
+            height: 100%;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            transition: all 0.3s;
+        }
+        
+        .destination .image .itemBox:hover .item {
+            transform: scale(1.1);
+        }
+        
+        .destination .image .itemSmallBox:hover .item {
+            transform: scale(1.1);
+        }
+        
+        .destination .image .location {
+            position: absolute;
+            font-size: 20px;
+            top: 15px;
+            left: 10px;
+            z-index: 2;
+            color: white;
+            text-transform: uppercase;
+            transition: all 0.5s;
+        }
+        
+        .destination .image .stat {
+            position: absolute;
+            font-size: 14px;
+            top: 35px;
+            left: 10px;
+            z-index: 2;
+            color: white;
+            transition: all 0.5s;
+            opacity: 0;
+        }
+        
+        .destination .image .line {
+            width: 20px;
+            height: 4px;
+            background-color: white;
+            position: absolute;
+            top: 25px;
+            left: -20px;
+            transition: all 0.5s;
+            z-index: 2;
+        }
+        
+        .destination .image .overlay {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgb(0, 0, 0, 0.5);
+            z-index: 1;
+            transition: all 0.5s;
+            filter: alpha(opacity=0);
+            opacity: 0;
+        }
+        
+        .destination .image .itemBox:hover .overlay {
+            filter: alpha(opacity=1);
+            opacity: 1;
+            bottom: 0;
+        }
+        
+        .destination .image .itemBox:hover .location {
+            left: 30px;
+        }
+        
+        .destination .image .itemBox:hover .stat {
+            left: 40px;
+            opacity: 1;
+        }
+        
+        .destination .image .itemBox:hover .line {
+            left: 0px;
+            width: 25px;
+        }
+        
+        .destination .image .itemSmallBox:hover .overlay {
+            filter: alpha(opacity=1);
+            opacity: 1;
+            bottom: 0;
+        }
+        
+        .destination .image .itemSmallBox:hover .location {
+            left: 30px;
+        }
+        
+        .destination .image .itemSmallBox:hover .stat {
+            left: 40px;
+            opacity: 1;
+        }
+        
+        .destination .image .itemSmallBox:hover .line {
+            left: 0px;
+            width: 25px;
+        }
+        
+        #img-md {
+            visibility: hidden;
+            height: 0px;
+            margin-top: 0;
+        }
+        
+        #img-sm {
+            visibility: hidden;
+            height: 0px;
+            margin-top: 0;
+        }
+        /*end destination*/
+        /*This was copied from tour-list.
+Need adjustment for each page*/
+        
+        @media all and (max-width: 1199px) {
+            .discover .image .itemBox .info {
+                margin-top: 10px;
+            }
+        }
+        
+        @media all and (max-width: 1024px) {
+            #img-lg {
+                display: none;
+                /*margin-top: 0;*/
+            }
+            #img-md {
+                visibility: visible;
+                height: auto;
+                margin-top: 100px;
+            }
+        }
+        
+        @media all and (max-width: 992px) {
+            .carousel-inner {
+                height: 200px !important;
+            }
+            .carousel-item img {
+                height: 100% !important;
+                width: 100% !important;
+            }
+            #img-md {
+                display: none;
+            }
+            #img-sm {
+                visibility: visible;
+                height: auto;
+                margin-top: 100px;
+            }
+            #noname {
+                transform: scale(0.6);
+            }
+        }
+        
+        @media all and (max-width: 768px) {
+            .card {
+                transform: scale(0.9);
+                transition: 2s;
+                overflow: hidden;
+                box-sizing: border-box;
+            }
+            .card:hover {
+                transform: scale(1);
+                box-shadow: 2px 2px 10px black;
+                text-shadow: 3px 3px 7px grey;
+                transition: 0.5s;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+            #img-card {
+                height: 100% !important;
+                width: 100% !important;
+            }
+            .destination .detail {
+                width: 40%;
+            }
+            .review .detail {
+                width: 40%;
+            }
+            .review .slice {
+                width: 25%;
+            }
+        }
+        
+        @media all and (max-width: 576px) {
+            .destination .detail {
+                width: 80%;
+            }
+            .review .detail {
+                width: 80%;
+            }
+        }
+        /* Phần đầu slide chạy khuyến mãi  */
+        
+        .hi-slide {
+            position: relative;
+            width: 754px;
+            height: 292px;
+            margin: 115px auto 0;
+        }
+        
+        .hi-slide .hi-next,
+        .hi-slide .hi-prev {
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 40px;
+            margin-top: -20px;
+            border-radius: 50px;
+            line-height: 40px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #fff;
+            color: grey;
+            transition: all 0.6s;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .hi-slide .hi-next:hover,
+        .hi-slide .hi-prev:hover {
+            opacity: 0.7;
+            background-color: #fff;
+        }
+        
+        .hi-slide .hi-prev {
+            left: -30px;
+        }
+        
+        .hi-slide .hi-prev::before {
+            content: '<';
+        }
+        
+        .hi-slide .hi-next {
+            right: -30px;
+        }
+        
+        .hi-slide .hi-next::before {
+            content: '>';
+        }
+        
+        .hi-slide>ul {
+            list-style: none;
+            position: relative;
+            width: 754px;
+            height: 292px;
+            margin: 10px;
+            padding: 0;
+        }
+        
+        .hi-slide>ul>li {
+            overflow: hidden;
+            position: absolute;
+            z-index: 0;
+            left: 377px;
+            top: 146px;
+            width: 0;
+            height: 0;
+            margin: 0;
+            padding: 0px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            background-image: linear-gradient(yellowgreen, #3fced3);
+            box-shadow: 1px 4px 3px 5px gainsboro;
+        }
+        /* Phần cuoi slide chạy khuyến mãi  */
+        /* Phần đầu chu Tuor khuyến mãi */
+        
+        .special-tour__sub-tittle {
+            margin-top: 25px;
+            font-family: Lato-regular;
+            font-size: 13px;
+            color: #999999;
+            font-weight: normal;
+        }
+        
+        .section-tittle span,
+        .section-tittle-2 span {
+            font-family: "Ubuntu-bold", sans-serif;
+            font-size: 30px;
+            color: #000000;
+            font-weight: normal;
+        }
+        
+        .section-tittle__line-under {
+            position: absolute;
+            width: 150px;
+            border-top: 5px solid #3fced3;
+        }
+        
+        .section-tittle h3,
+        .section-tittle-2 h3 {
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-family: "Ubuntu-bold", sans-serif;
+            font-size: 54px;
+            color: #f2f2f2;
+            font-weight: normal;
+        }
+        
+        .section-tittle,
+        .section-tittle-2 {
+            position: relative;
+        }
+        
+        .section-tittle p,
+        .section-tittle-2 p {
+            top: 30px;
+            position: absolute;
+            font-family: "Ubuntu-regular", sans-serif;
+            font-size: 30px;
+            color: #000000;
+            font-weight: normal;
+        }
+        /* Phần cuối chu Tuor khuyến mãi */
+        /*filter price bar*/
+        
+        #tour-item-banner {
+            height: 500px;
+            width: 100%;
+            background-image: url("home-img.jpg");
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: flex-end;
+        }
+        
+        .checked {
+            color: orange;
+        }
+        
+        .tour-infomation-content {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-auto-rows: 45px;
+            align-items: center;
+            padding: 25px 0;
+        }
+        
+        .tour-infomation-content-time-table {
+            height: 50px;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            align-items: center;
+            border-bottom: 1px solid #e6e6e6;
+        }
+        
+        #table_admin ul li:first-child {
+            padding: 50px;
+        }
+        
+        #table_admin ul li:first-child:hover {
+            background-color: lightblue;
+        }
+        
+        #table_admin ul {
+            border: 1px solid #e6e6e6;
+            height: 200vh;
+            padding: 0px;
+            background-color: lightblue;
+        }
+        
+        #table_admin ul li {
+            text-align: center;
+            border: 1px solid #e6e6e6;
+            list-style-type: none;
+            padding: 30px;
+            border-radius: 3px;
+        }
+        
+        #table_admin ul li:hover {
+            background-color: chartreuse;
+        }
+        
+        #table_admin_users {
+            display: none;
+        }
+        
+        #table_admin_order {
+            display: none;
+        }

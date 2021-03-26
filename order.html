@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Page</title>
+    <!-- Link awesome and jquery -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+    <!-- link bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- LINK TỰ ADD -->
+    <link href="css/style.css" rel="stylesheet">
+    <script src="./js/main.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="table_order">
+            <div class="product">
+                <div class="title">
+                    <h4>Các Tours đã đặt</h4>
+                </div>
+                <hr>
+                <table class="table">
+                    <thead class="thead-light text-center">
+                        <tr>
+                            <th>ID</th>
+                            <th>nameTour</th>
+                            <th>price</th>
+                            <th>amout</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center" id="listOrder"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        showCart();
+    </script>
+
+</body>
+
+</html>
